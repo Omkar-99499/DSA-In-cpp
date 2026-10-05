@@ -18,17 +18,17 @@ Develop a C program to demonstrate the basic concepts of pointers, including poi
 
 ##  Flowchart
 
-Start
-↓
-Declare num and ptr
-↓
-Enter number
-↓
-Store address of num in ptr
-↓
-Display value and address
-↓
-Display value using *ptr
-↓
-Stop
+          Start
+            ↓
+      Declare num and ptr
+             ↓
+      Enter number
+             ↓
+    Store address of num in ptr
+             ↓
+    Display value and address
+             ↓
+    Display value using *ptr
+             ↓
+            Stop
 
