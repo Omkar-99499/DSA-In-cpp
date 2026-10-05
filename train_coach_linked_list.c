@@ -1,28 +1,25 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+using namespace std;
 
 struct Node {
     int coachNo;
-    struct Node *next;
+    Node* next;
 };
 
-// Add coach
-void addCoach(struct Node **head) {
+void addCoach(Node** head) {
     int coachNo;
-    struct Node *newNode, *temp;
 
-    printf("Enter coach number: ");
-    scanf("%d", &coachNo);
+    cout << "Enter coach number: ";
+    cin >> coachNo;
 
-    newNode = (struct Node *)malloc(sizeof(struct Node));
-
+    Node* newNode = new Node();
     newNode->coachNo = coachNo;
     newNode->next = NULL;
 
     if (*head == NULL) {
         *head = newNode;
     } else {
-        temp = *head;
+        Node* temp = *head;
 
         while (temp->next != NULL) {
             temp = temp->next;
@@ -31,62 +28,57 @@ void addCoach(struct Node **head) {
         temp->next = newNode;
     }
 
-    printf("Coach added successfully.\n");
+    cout << "Coach added successfully.\n";
 }
 
-// Display coaches
-void display(struct Node *head) {
-    struct Node *temp = head;
-
+void display(Node* head) {
     if (head == NULL) {
-        printf("No coaches available.\n");
+        cout << "No coaches available.\n";
         return;
     }
 
-    printf("Train Coaches: ");
+    Node* temp = head;
+
+    cout << "\nTrain Coaches: ";
 
     while (temp != NULL) {
-        printf("%d -> ", temp->coachNo);
+        cout << temp->coachNo << " -> ";
         temp = temp->next;
     }
 
-    printf("NULL\n");
+    cout << "NULL\n";
 }
 
-// Delete first coach
-void removeCoach(struct Node **head) {
-    struct Node *temp;
-
+void removeCoach(Node** head) {
     if (*head == NULL) {
-        printf("No coaches available.\n");
+        cout << "No coach to remove.\n";
         return;
     }
 
-    temp = *head;
+    Node* temp = *head;
     *head = (*head)->next;
 
-    printf("Coach %d removed successfully.\n", temp->coachNo);
+    cout << "Coach " << temp->coachNo << " removed successfully.\n";
 
-    free(temp);
+    delete temp;
 }
 
 int main() {
-    struct Node *head = NULL;
+    Node* head = NULL;
     int choice;
 
-    printf("----- Train Coach Management -----\n");
+    cout << "----- Train Coach Management -----\n";
 
     do {
-        printf("\n1. Add Coach");
-        printf("\n2. Display Coaches");
-        printf("\n3. Remove First Coach");
-        printf("\n4. Exit");
+        cout << "\n1. Add Coach";
+        cout << "\n2. Display Coaches";
+        cout << "\n3. Remove First Coach";
+        cout << "\n4. Exit";
 
-        printf("\n\nEnter your choice: ");
-        scanf("%d", &choice);
+        cout << "\n\nEnter your choice: ";
+        cin >> choice;
 
         switch (choice) {
-
             case 1:
                 addCoach(&head);
                 break;
@@ -100,11 +92,11 @@ int main() {
                 break;
 
             case 4:
-                printf("Program ended.\n");
+                cout << "Program ended.\n";
                 break;
 
             default:
-                printf("Invalid choice! Please try again.\n");
+                cout << "Invalid choice! Please try again.\n";
         }
 
     } while (choice != 4);
