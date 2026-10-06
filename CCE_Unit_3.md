@@ -58,18 +58,6 @@ Stop the program.
       Display Menu   END
 ```
 
-### Flowchart Explanation
-
-1. **Start** – Program सुरू होतो.
-2. **head = nullptr** – सुरुवातीला Linked List रिकामी असते.
-3. **Display Menu** – Add Coach, Display Coaches, Remove First Coach आणि Exit हे options दाखवले जातात.
-4. **Enter Choice** – User कडून choice घेतली जाते.
-5. **Add Coach** – नवीन Coach Linked List मध्ये जोडला जातो.
-6. **Display Coaches** – सर्व Coaches display केले जातात.
-7. **Remove First Coach** – Linked List मधील पहिला Coach delete केला जातो.
-8. **Exit** – User ने 4 निवडल्यास program बंद होतो.
-9. **Choice 4 नसल्यास** – Menu पुन्हा display केला जातो.
-
 ## C++ Code
 
 ```cpp
@@ -212,18 +200,3 @@ Enter your choice: 4
 Program exited.
 ```
 
-## C++ Concepts Used
-
-- Structure
-- Pointer
-- `new`
-- `delete`
-- Functions
-- `if-else`
-- `while`
-- `do-while`
-- `switch-case`
-
-## Conclusion
-
-The Train Coach Management System demonstrates how a Singly Linked List can be used to dynamically add, display, and remove train coaches.
